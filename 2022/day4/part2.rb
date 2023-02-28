@@ -9,13 +9,14 @@ overlapping_pairs = 0
 pairs.each do |pair|
   # split each pair string into an array with two positions
   # turn each position into a range
+  # return a new Set from the range
   left, right = pair.split(',').map do |string_range|
     start, stop = string_range.split("-")
-    # convert range to an array, and then to a set
-    Set.new (start.to_i..stop.to_i).to_a
+    (start.to_i..stop.to_i).to_set
   end
 
   # check if the two sets overlap using intersection
+  # only increase the counter if the intersection (which returns a new Set) is not empty
   if !(left & right).empty?
     overlapping_pairs += 1
   end
