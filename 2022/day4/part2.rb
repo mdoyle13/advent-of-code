@@ -11,7 +11,7 @@ pairs.each do |pair|
   # turn each position into a range
   # return a new Set from the range
   left, right = pair.split(',').map do |string_range|
-    start, stop = string_range.split("-")
+    start, stop = string_range.split('-')
     (start.to_i..stop.to_i).to_set
   end
 
