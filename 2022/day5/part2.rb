@@ -26,6 +26,7 @@ end
 
 moves.each do |move|
   n, from, to = move
+  # pop n values off the "from" array and add them to the to array
   towers[to - 1] += towers[from - 1].pop(n)
 end
 
