@@ -5,6 +5,7 @@ marker_check = []
 # unshift edits the array inplace
 input.chars.each do |char|
   # push the character onto an array
+  # could maybe use each_cons for this instead of locking the length to 4?
   marker_check.push(char)
   next if marker_check.length < 4
   
